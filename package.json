@@ -1,0 +1,25 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "**Overview:**\r In this appliburgerion you can add a new burger and devour the burgers which will move the burger to the list of eaten burgers.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jlcampbell16/Burger.git"
+  },
+  "author": "jlcampbell16",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jlcampbell16/Burger/issues"
+  },
+  "homepage": "https://github.com/Jlcampbell16/Burger#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mysql": "^2.16.0"
+  }
+}

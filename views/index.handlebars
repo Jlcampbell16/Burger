@@ -1,0 +1,46 @@
+<h1>Burgers!</h1>
+
+<h2>Burgers that are ready to be devoured!</h2>
+
+<ul>
+  {{#each burgers}}
+  {{#unless devoured}}
+  {{!-- {{> burgers/burger-block devoured=false}} --}}
+  <li>
+	{{burger_name}}
+
+	<button class="change-sleep" data-id="{{id}}" data-newsleep="{{devoured}}">
+		{{#if devoured}}REORDER!{{else}}DEVOUR!{{/if}}
+	</button>
+
+	<button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
+
+</li>
+  {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Burgers that have been devoured!</h2>
+
+<ul>
+  {{#each burgers}}
+  {{#if devoured}}
+  <li>
+  {{burger_name}}
+  {{!-- {{> burgers/burger-block devoured=true}} --}}
+</li>
+  {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="burger">Burger Name:</label>
+    <input type="text" id="burger" name="name">
+  </div>
+
+
+  <button type="submit">Add burger</button>
+</form>
