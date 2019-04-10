@@ -1,21 +1,21 @@
 // FRONT END FORM
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-  $(".change-sleep").on("click", function(event) {
+  $(".change-devoured").on("click", function(event) {
     var id = $(this).data("id"); //6
-    var newSleep = $(this).data("newsleep"); // true
-    console.log("changed sleep to", $(this));
-    var newSleepState = {
+    var newdevour = $(this).data("newdevour"); // true
+    console.log("changed devour to", $(this));
+    var devourState = {
       devour: true//true
     };
 
     // Send the PUT request. "api/burgers/6"
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
-      data: newSleepState
+      data: devourState
     }).then(
       function() {
-        console.log("changed sleep to", newSleep);
+        console.log("changed devour to", newdevour);
         // Reload the page to get the updated list
         location.reload();
       }
