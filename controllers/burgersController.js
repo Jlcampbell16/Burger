@@ -5,7 +5,7 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {  //SHOWS ALL THE burgerS
+router.get("/", function(req, res) {  
   burger.all(function(data) {
     var hbsObject = {
       burgers: data
@@ -20,9 +20,9 @@ router.get("/", function(req, res) {  //SHOWS ALL THE burgerS
 router.post("/api/burgers", function(req, res) {
   console.log("req in post:", req.body)
   burger.create([
-    "burger_name", "devoured"  //COLUMN HEADERS WE WANT TO ADD INTO OUR DATABASE
+    "burger_name", "devoured" 
   ], [
-    req.body.name, req.body.devour // VALUES TO ENTER INTO THE DATABASE
+    req.body.name, req.body.devour 
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
@@ -32,15 +32,15 @@ router.post("/api/burgers", function(req, res) {
 
 
 router.put("/api/burgers/:id", function(req, res) {
-  var condition = "id = " + req.params.id; //id = 6
+  var condition = "id = " + req.params.id; 
 
   console.log("condition", condition);
   console.log ("router.put", req.body)
 
   burger.update({
-    devoured: req.body.devour //dDATA WE ARE UPDATING
+    devoured: req.body.devour 
   }, condition, function(result) {
-    if (result.changedRows == 0) {  // changedRows WORKS ONLY FOR UPDATING
+    if (result.changedRows == 0) {  
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
     } else {
@@ -55,7 +55,7 @@ router.delete("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   burger.delete(condition, function(result) {
-    if (result.affectedRows == 0) { // affectedRows WORKS ONLY FOR DELETING
+    if (result.affectedRows == 0) { 
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
     } else {

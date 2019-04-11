@@ -1,4 +1,7 @@
 
+<body>
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+
 <div class="container">
   <h1>EAT-DA-BURGER</h1>
 
@@ -24,13 +27,11 @@
       <ul>
         {{#each burgers}}
           {{#unless devoured}}
-            {{!-- {{> burgers/burger-block devoured=false}} --}}
             <li>
               {{burger_name}}
                 <button class="change-devoured" data-id="{{id}}" data-newdevour="{{devoured}}">
                   {{#if devoured}}REORDER!{{else}}DEVOUR!{{/if}}
                 </button>
-            {{!-- <button class="delete-burger" data-id="{{this.id}}">DELETE!</button> --}}
           </li>
           {{/unless}}
         {{/each}}
@@ -45,7 +46,6 @@
         {{#if devoured}}
           <li>
             {{burger_name}}
-            {{!-- {{> burgers/burger-block devoured=true}} --}}
           </li>
         {{/if}}
       {{/each}}
@@ -53,3 +53,5 @@
     </div>
 
 </div>
+
+</body>
